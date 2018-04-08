@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1b51232f503c842a9e2f27562b2f84, type: 3}
+  m_Name: Petrol Chaser
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 588234571ded5284e8c90727897e1fea, type: 2}
+  transitions:
+  - desicion: {fileID: 11400000, guid: e3e285d9b064042469f783661eb83c2f, type: 2}
+    trueState: {fileID: 11400000, guid: fd05f8ce6b036c740bea1022503623c7, type: 2}
+    falseState: {fileID: 11400000, guid: e12b93b6a1ba0844d9a9fe4a9a1fa54c, type: 2}
+  sceneGizmoColor:
+    r: 0.33631706
+    g: 0.060337372
+    b: 0.9117647
+    a: 1
