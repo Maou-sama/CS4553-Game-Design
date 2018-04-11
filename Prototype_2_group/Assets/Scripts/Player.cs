@@ -91,6 +91,7 @@ public class Player : MonoBehaviour {
         { 
                 GameObject b;
                 b = GameObject.Instantiate(bomp);
+                another_eye--;
                 b.transform.position = transform.position + forward*0.1f;
         }
         if(Input.GetKeyDown(KeyCode.Q)&&another_eye>0)
@@ -113,7 +114,6 @@ public class Player : MonoBehaviour {
         {
             CloseMask();
         }
-       
     }
 
     private void OpenMask()
@@ -134,8 +134,14 @@ public class Player : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag != "StaticWall")
+        {
+            collision.collider.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
             cam.DOShakePosition(0.5f, 0.5f, 10).Play();
             
+        }
+        //else
+          // collision.collider.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+
     }
 
     private void OnGUI()
