@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Mask
   - StaticWall
+  - FlashLight
+  - Enemy
+  - TurnInvisiblePoint
   layers:
   - Default
   - TransparentFX

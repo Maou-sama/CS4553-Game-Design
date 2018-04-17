@@ -22,12 +22,13 @@ GameObject:
   - component: {fileID: 212949447120676758}
   - component: {fileID: 50100005948462638}
   - component: {fileID: 61882932015398948}
-  - component: {fileID: 114462975505581622}
   - component: {fileID: 210334519362439916}
   - component: {fileID: 82730159249764662}
-  m_Layer: 8
-  m_Name: Wall_Block
-  m_TagString: Untagged
+  - component: {fileID: 114527337306299430}
+  - component: {fileID: 114594876337615376}
+  m_Layer: 9
+  m_Name: FireWall
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049248627495310}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 6.207205, y: -2.3308825, z: -1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 42, y: 4, z: -1}
+  m_LocalScale: {x: 2.000001, y: 2.000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,13 +97,13 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049248627495310}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac3b4eaeb92912e4b9444d77160ee174, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -110,9 +111,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 2
+  MaxDistance: 3
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -120,16 +121,10 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0.70304
-      value: 0.79166794
-      inSlope: -1.4005619
-      outSlope: -1.4005619
-      tangentMode: 0
-    - serializedVersion: 2
       time: 1
-      value: 0
-      inSlope: -0.7145718
-      outSlope: -0.7145718
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -139,10 +134,16 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
+      outSlope: 1
+      tangentMode: 65
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 5
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -170,7 +171,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114462975505581622
+--- !u!114 &114527337306299430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049248627495310}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7055c526e9c88134b8b633d9fd7dc665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeTime: 2
+  colorGradient:
+    serializedVersion: 2
+    key0: {r: 0.9725491, g: 0.07450981, b: 0.07450981, a: 1}
+    key1: {r: 0.9725491, g: 0.07450981, b: 0.07450981, a: 0}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  startChanging: 0
+--- !u!114 &114594876337615376
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -178,13 +221,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049248627495310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774d30b9aaf937f45899e252a691736b, type: 3}
+  m_Script: {fileID: 11500000, guid: 57d97b86e3ea2bb4496925d41d0ad960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  cur_pos: 0
-  speed: 8
-  att: 8
 --- !u!210 &210334519362439916
 SortingGroup:
   m_ObjectHideFlags: 1

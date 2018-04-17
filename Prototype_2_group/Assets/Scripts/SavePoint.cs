@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class SavePoint : MonoBehaviour {
 
+    public bool check;
+
+    private void Start()
+    {
+        check = false;    
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject obj = collision.gameObject;
-        if(obj.tag == "Player")
+        if (collision.gameObject.tag == "Player" && check == false)
         {
-            obj.GetComponent<Player>().save_point = transform.position;
+            if(gameObject.tag == "TurnInvisiblePoint")
+            {
+                GameManager.gm.invisible = true;
+                Debug.Log("I'm Invisible Point");
+            }
 
-            int c =obj.GetComponent<Player>().another_eye;
-            if(c<12)
-                obj.GetComponent<Player>().another_eye = 12;
+            PlayerNew player = collision.gameObject.GetComponent<PlayerNew>();
+            player.setSavePointPos(transform.position);
+            player.hp = player.MaxHP;
+            check = true;
         }
     }
 }
