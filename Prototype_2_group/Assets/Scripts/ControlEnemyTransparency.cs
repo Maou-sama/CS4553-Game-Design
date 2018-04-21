@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+This script change the color of object along a gradient and not just transparency
+Can experiment if desired
+*/
+
 public class ControlEnemyTransparency : MonoBehaviour
 {
     private SpriteRenderer sr;
@@ -12,7 +17,7 @@ public class ControlEnemyTransparency : MonoBehaviour
 
     public Gradient colorGradient;
 
-    public bool startChanging;
+    private bool startChanging;
 
     // Use this for initialization
     void Start()
@@ -39,6 +44,7 @@ public class ControlEnemyTransparency : MonoBehaviour
         }
     }
 
+    //When enter the range of flashlight apply the color on the left most of gradient
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "FlashLight")
@@ -48,6 +54,7 @@ public class ControlEnemyTransparency : MonoBehaviour
         }
     }
 
+    //When out of range start changing the color along the gradient
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "FlashLight")

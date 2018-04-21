@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4947261393181506}
   - component: {fileID: 212974736193644016}
-  - component: {fileID: 114169756811282442}
+  - component: {fileID: 114776960468576750}
   m_Layer: 0
   m_Name: FootStep
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &114169756811282442
+--- !u!114 &114776960468576750
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,10 +49,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1488249720086760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 755512aa1f61f414ba5d2ae23a13cbf2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a7ef551aaa893c4f9d2add974dcc7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  existTime: 5
+  existTime: 2
 --- !u!212 &212974736193644016
 SpriteRenderer:
   m_ObjectHideFlags: 1

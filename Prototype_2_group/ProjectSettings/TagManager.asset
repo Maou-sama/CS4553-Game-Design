@@ -8,7 +8,8 @@ TagManager:
   - StaticWall
   - FlashLight
   - Enemy
-  - TurnInvisiblePoint
+  - MovingWall
+  - CrushingWall
   layers:
   - Default
   - TransparentFX

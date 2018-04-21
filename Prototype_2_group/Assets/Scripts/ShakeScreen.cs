@@ -1,6 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
+/*
+If need to shake screen, call the method Screenshake by accessing the script in main camera
+*/
+
 public class ShakeScreen : MonoBehaviour {
 
 	public Vector3 cameraCenterPos;

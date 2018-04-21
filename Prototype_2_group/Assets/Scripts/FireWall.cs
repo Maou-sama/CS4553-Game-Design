@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
-
 
 public class FireWall: MonoBehaviour {
 
@@ -14,5 +12,4 @@ public class FireWall: MonoBehaviour {
             Camera.main.GetComponent<ShakeScreen>().Screenshake(0.8f, 1.6f);
         }
     }
-
 }

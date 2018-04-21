@@ -4,14 +4,16 @@ using UnityEngine;
 
 
 public class PlayerNew : MonoBehaviour {
-    //This is the infomation of the palyer
-    public int hp;
+
+    [Header("Player's Properties")]
     [SerializeField] private int maxHP;
     [SerializeField] private int battery;
     [SerializeField] private Vector2 savePointPos;
-    [SerializeField] private Dictionary<int, bool> keys;
     [SerializeField] private int potion;
-    //get info by propertise
+
+    public int hp { get; set; }
+
+    private Dictionary<int, bool> keys;
 
     public int MaxHP
     {
@@ -53,26 +55,26 @@ public class PlayerNew : MonoBehaviour {
         }
         return keys[door_id];
     }
-    
+
+    public void AcquireKey(int door_id)
+    {
+        if (!keys.ContainsKey(door_id))
+        {
+            keys.Add(door_id, false);
+        }
+        keys[door_id] = true;
+    }
+
     //set the infomation by all these methods
     public void setSavePointPos(Vector2 pos)
     {
         savePointPos = pos;
-    }
-    public void setSavePointPos(Vector3 pos)
-    {
-       savePointPos = new Vector2(pos.x,pos.y);
-    }
-    public void setSavePointPos(Transform pos)
-    {
-        setSavePointPos(pos.position);
     }
 
     public void loseHP(int damage)
     {
         hp -= damage;
     }
-
     public void loseBatery(int num)
     {
         battery -= num;
@@ -85,18 +87,8 @@ public class PlayerNew : MonoBehaviour {
     {
         battery += num;
     }
-    public void AcquireKey(int door_id)
-    {
-        if (!keys.ContainsKey(door_id))
-        {
-            keys.Add(door_id, false);
-        }
-        keys[door_id] = true;
-    }
     public void AcquirePotion(int potion_num)
     {
         potion += potion_num;
     }
-
-    
 }

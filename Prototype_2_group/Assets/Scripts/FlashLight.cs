@@ -5,7 +5,7 @@ using System.Collections;
 public class FlashLight : MonoBehaviour
 {
     private CircleCollider2D cc2d;
-    public Light flashlight;
+    [SerializeField] private Light flashlight;
 
     // Use this for initialization
     void Start()
@@ -13,12 +13,12 @@ public class FlashLight : MonoBehaviour
         cc2d = GetComponent<CircleCollider2D>();
     }
 
-    // Update is called once per frame
     public void On()
     {
         cc2d.enabled = true;
         flashlight.intensity = 5;
     }
+
     public void Off()
     {
         cc2d.enabled = false;

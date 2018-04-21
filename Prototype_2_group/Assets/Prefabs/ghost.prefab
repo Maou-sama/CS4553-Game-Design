@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 212905570893314354}
   - component: {fileID: 61595924259618824}
   - component: {fileID: 82488283510615498}
-  - component: {fileID: 114531083545780906}
   - component: {fileID: 50267314131725706}
-  - component: {fileID: 114641570205057812}
+  - component: {fileID: 114074686389384052}
+  - component: {fileID: 114326209986175704}
   m_Layer: 11
   m_Name: ghost
   m_TagString: Untagged
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948591652792016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -90.63, y: -24.34, z: -1}
+  m_LocalPosition: {x: 2, y: 2, z: -1}
   m_LocalScale: {x: 0.34055, y: 0.34055, z: 0.34055}
   m_Children:
   - {fileID: 4023814910168138}
@@ -140,7 +140,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -169,7 +169,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -220,7 +220,7 @@ AudioSource:
   Priority: 0
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 2.5
+  MaxDistance: 6
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -285,14 +285,14 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.9916649
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114531083545780906
+--- !u!114 &114074686389384052
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -300,33 +300,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 1948591652792016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f31066b9be1be04180111f8a0ed4672, type: 3}
+  m_Script: {fileID: 11500000, guid: 7055c526e9c88134b8b633d9fd7dc665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostRangeClip: {fileID: 8300000, guid: 694fc1f0d64b0f14eae0b1e2f2c0bd63, type: 3}
-  ghostFollowClip: {fileID: 8300000, guid: 694fc1f0d64b0f14eae0b1e2f2c0bd63, type: 3}
-  scream: {fileID: 1482350339529488}
-  jumpOutScale: 10
-  target: {fileID: 0}
-  speed: 0.1
-  followRange: 3
-  footStep: {fileID: 1488249720086760, guid: a6bd82bc3c028ed4a9735bd78ba9f029, type: 2}
---- !u!114 &114641570205057812
+  changeTime: 1
+  colorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 0}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  startChanging: 0
+--- !u!114 &114326209986175704
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948591652792016}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecab1aca3392cb4ba514eb4c9b72238, type: 3}
+  m_Script: {fileID: 11500000, guid: 0803124c058254c4e8c2849ac07184cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 0.15
-  ghostRangeClip: {fileID: 8300000, guid: 5138574c4d4fbd94796f956e2684f26e, type: 3}
-  ghostFollowClip: {fileID: 8300000, guid: 5138574c4d4fbd94796f956e2684f26e, type: 3}
-  followRange: 3
+  speed: 0.1
+  damage: 1
+  chaseRange: 6
+  jumpOutScale: 5
+  footStepClip: {fileID: 8300000, guid: 5643b5a987e97ac459c8ee743cdc09ee, type: 3}
+  footStep: {fileID: 1488249720086760, guid: a6bd82bc3c028ed4a9735bd78ba9f029, type: 2}
+  footStepGenerateInterval: 2
+  screamAudioControl: {fileID: 82219654017002110}
 --- !u!212 &212905570893314354
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -370,4 +396,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0

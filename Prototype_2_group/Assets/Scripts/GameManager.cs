@@ -7,16 +7,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gm = null;
 
-    public GameObject playerPrefab;
-    public GameObject player;
     private PlayerNew playerData;
-    public Transform startPosition;
+    private GameObject player;
+
+    [Header("Initialization")]
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private Transform startPosition;
+
+    [Header("Text Field")]
     public Text hp;
     public Text battery;
-
-    public GameObject[] enemies;
-
-    public bool invisible;
 
     void Awake()
     {
@@ -35,13 +35,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-        // Use this for initialization
+    // Use this for initialization
     void Start()
     {
+        //Clone player and get the PlayerNew script and record the spawnPoint
         player = Instantiate(playerPrefab, new Vector3(startPosition.position.x, startPosition.position.y, -1), Quaternion.identity);
         playerData = player.GetComponent<PlayerNew>();
         playerData.setSavePointPos(startPosition.position);
-        invisible = false;
     }
 
     // Update is called once per frame
@@ -49,19 +49,5 @@ public class GameManager : MonoBehaviour
     {
         hp.text = "HP: " + playerData.hp;
         battery.text = "x " + playerData.Battery;
-
-        if (invisible == true)
-        {
-            Debug.Log("Invisible");
-
-            enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-            foreach (GameObject enemy in enemies)
-            {
-                enemy.GetComponent<ControlEnemyTransparency>().enabled = true;
-                //enemy.GetComponent<ControlEnemyTransparency>().startChanging = true;
-            }
-            invisible = false;
-        }
     }
 }
