@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Key : MonoBehaviour {
 
-    private PlayerNew player;
+    public PlayerNew player;
 
     [Header("Key Properties")]
     [SerializeField] private Door door;
@@ -16,8 +16,11 @@ public class Key : MonoBehaviour {
         //Assign the door ID to key ID and match the color
         keyID = door.DoorID;
         GetComponent<SpriteRenderer>().color = door.GetComponent<SpriteRenderer>().color;
+    }
 
-        //Find the player in the scene
+    private void Update()
+    {
+	    //Find the player in the scene
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerNew>();
