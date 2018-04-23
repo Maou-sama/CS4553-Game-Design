@@ -5,11 +5,25 @@ public class MovingWall : MonoBehaviour
 {
     //Whether the wall move down or up
     [SerializeField] private bool moveDown;
+    [SerializeField] private bool startMoving;
+
+    private Animator anim;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         //Change the animator according to move direction of the wall
-        GetComponent<Animator>().SetBool("moveDown", moveDown);
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        anim.SetBool("moveDown", moveDown);
+        anim.SetBool("startMoving", startMoving);
+    }
+
+    public void Move()
+    {
+        startMoving = true;
     }
 }
