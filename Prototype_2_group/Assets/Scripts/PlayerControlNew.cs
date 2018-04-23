@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -30,7 +30,8 @@ public class PlayerControlNew : MonoBehaviour {
         if (player.hp <= 0)
         {
             player.hp = player.MaxHP;
-            transform.position = player.SavePointPos;
+            Camera.main.GetComponent<ShakeScreen>().cameraCenterPos = new Vector3(player.SavePointPos.x, player.SavePointPos.y, -10);
+            transform.position = new Vector3(player.SavePointPos.x, player.SavePointPos.y, -1);
         }
 
         rigi.velocity = Vector2.zero;

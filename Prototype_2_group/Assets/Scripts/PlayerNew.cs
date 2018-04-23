@@ -8,7 +8,7 @@ public class PlayerNew : MonoBehaviour {
     [Header("Player's Properties")]
     [SerializeField] private int maxHP;
     [SerializeField] private int battery;
-    [SerializeField] private Vector2 savePointPos;
+    [SerializeField] private Vector3 savePointPos;
     [SerializeField] private int potion;
 
     public int hp { get; set; }
@@ -31,7 +31,7 @@ public class PlayerNew : MonoBehaviour {
         }
     }
 
-    public Vector2 SavePointPos
+    public Vector3 SavePointPos
     {
         get
         {

@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 10
-  battery: 4
+  battery: 200
   savePointPos: {x: 0, y: 0}
   potion: 2
 --- !u!212 &212826833011524912

@@ -2,9 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class RotateSample : MonoBehaviour
-{	
-	void Start(){
-		iTween.RotateBy(gameObject, iTween.Hash("x", .25, "easeType", "easeInOutBack", "loopType", "pingPong", "delay", .4));
+{
+    public float speed = 0.5f;
+    public Transform target;
+    private Vector3 zAxis = new Vector3(0, 0, 1);
+	void Update(){
+        transform.RotateAround(target.position, zAxis, speed);
 	}
 }
 
