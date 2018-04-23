@@ -93,6 +93,7 @@ public class PlayerControlNew : MonoBehaviour {
         {
             Debug.Log("Touching Moving Wall");
             player.loseHP(wallDamage);
+            Camera.main.GetComponent<ShakeScreen>().Screenshake(0.8f, 1.6f);
         }
     }
 }
