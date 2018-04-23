@@ -13,7 +13,7 @@ public class PlayerNew : MonoBehaviour {
 
     public int hp { get; set; }
 
-    private Dictionary<int, bool> keys;
+	private Dictionary<int, bool> keys = new Dictionary<int, bool>(); //#
 
     public int MaxHP
     {
@@ -64,6 +64,7 @@ public class PlayerNew : MonoBehaviour {
         }
         keys[door_id] = true;
     }
+
 
     //set the infomation by all these methods
     public void setSavePointPos(Vector2 pos)

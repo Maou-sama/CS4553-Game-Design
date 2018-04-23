@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7055c526e9c88134b8b633d9fd7dc665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 2
+  changeTime: 0.7
   colorGradient:
     serializedVersion: 2
     key0: {r: 0.9725491, g: 0.07450981, b: 0.07450981, a: 1}
@@ -218,7 +218,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  startChanging: 0
 --- !u!114 &114594876337615376
 MonoBehaviour:
   m_ObjectHideFlags: 1

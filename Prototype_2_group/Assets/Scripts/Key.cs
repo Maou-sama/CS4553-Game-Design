@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Key : MonoBehaviour {
 
-    public PlayerNew player;
+	private PlayerNew player;
 
     [Header("Key Properties")]
     [SerializeField] private Door door;
     [SerializeField] private int keyID;
 
-    private void Start()
+    private void Update()	//#
     {
         //Assign the door ID to key ID and match the color
         keyID = door.DoorID;
@@ -23,13 +23,13 @@ public class Key : MonoBehaviour {
 	    //Find the player in the scene
         if (player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerNew>();
+			player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerNew>();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (player != null && collision.gameObject.tag == "Player")
         {
             player.AcquireKey(keyID);
             Destroy(gameObject);
