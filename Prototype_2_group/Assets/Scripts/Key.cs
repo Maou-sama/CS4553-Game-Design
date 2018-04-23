@@ -11,14 +11,15 @@ public class Key : MonoBehaviour {
     [SerializeField] private Door door;
     [SerializeField] private int keyID;
 
-    private void Update()	//#
+
+    private void Start()
     {
         //Assign the door ID to key ID and match the color
         keyID = door.DoorID;
         GetComponent<SpriteRenderer>().color = door.GetComponent<SpriteRenderer>().color;
     }
 
-    private void Update()
+    private void Update()	//#
     {
 	    //Find the player in the scene
         if (player == null)

@@ -13,12 +13,11 @@ public class PathFinding : MonoBehaviour
     private int currentPoint = 0;
     //public float rotateTime;
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         //Vector3 dir = path[currentPoint].position - transform.position;
         //float rotateAngle = Vector3.SignedAngle(path[currentPoint].position - transform.position, Vector3.up, Vector3.forward);
-
         //LeanTween.rotateZ(gameObject, -rotateAngle, rotateTime);
 
         //Calculate the distance between the monster and the current point its going to

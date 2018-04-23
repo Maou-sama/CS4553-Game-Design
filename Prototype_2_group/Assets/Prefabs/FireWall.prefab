@@ -183,7 +183,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049248627495310}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7055c526e9c88134b8b633d9fd7dc665, type: 3}
   m_Name: 
@@ -229,6 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d97b86e3ea2bb4496925d41d0ad960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  screenShakeDuration: 0
+  screenShakeMagnitude: 0
 --- !u!210 &210334519362439916
 SortingGroup:
   m_ObjectHideFlags: 1

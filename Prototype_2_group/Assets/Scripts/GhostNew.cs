@@ -30,6 +30,7 @@ public class GhostNew : MonoBehaviour {
     private AudioSource audioControl;
     private Rigidbody2D rigi;
     private SpriteRenderer spr;
+    private bool leaveFootStep = false;
     //private Sequence seq;
 
     private Vector2 originalPosition;
@@ -79,7 +80,7 @@ public class GhostNew : MonoBehaviour {
             ChasePlayer();
         }
         else
-        {       
+        {
             GoBack();
         }
     }
@@ -91,20 +92,7 @@ public class GhostNew : MonoBehaviour {
         Vector2 direction = (player.transform.position - transform.position).normalized;
 
         //Leave footstep and move to player if distance is > 0.2
-        if (distance >= 0.2f)
-        {
-            if (!audioControl.isPlaying)
-                audioControl.PlayOneShot(footStepClip);
-            rigi.velocity = speed * direction;
-            Invoke("LeaveFootStep", footStepGenerateInterval);
-        }
-        else
-        {
-            rigi.velocity = Vector2.zero;
-            CancelInvoke();
-        }
-  
-
+        GhostMovement(distance, direction);
     }
 
     void GoBack()
@@ -114,25 +102,41 @@ public class GhostNew : MonoBehaviour {
         Vector2 direction = (originalPosition - (Vector2)transform.position).normalized;
 
         //Move back until the original position and leave foot step
+        GhostMovement(distance, direction);
+    }
+
+    void GhostMovement(float distance, Vector2 direction)
+    {
         if (distance >= 0.1f)
         {
             if (!audioControl.isPlaying)
                 audioControl.PlayOneShot(footStepClip);
             rigi.velocity = speed * direction;
-            Invoke("LeaveFootStep", footStepGenerateInterval);
+
+            if (!leaveFootStep)
+            {
+                StartCoroutine(LeaveFootStep());
+                leaveFootStep = true;
+            }
         }
         else
         {
             transform.position = originalPosition;
             rigi.velocity = Vector2.zero;
-            CancelInvoke();
+
+            if (leaveFootStep)
+            {
+                StopAllCoroutines();
+                leaveFootStep = false;
+            }
         }
     }
 
-    void LeaveFootStep()
+    IEnumerator LeaveFootStep()
     {
         Instantiate(footStep, transform.position, Quaternion.identity);
-        //Invoke("LeaveFootStep", footStepGenerateInterval);
+        yield return new WaitForSeconds(footStepGenerateInterval);
+        StartCoroutine(LeaveFootStep());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

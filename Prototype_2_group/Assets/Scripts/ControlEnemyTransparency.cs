@@ -51,6 +51,7 @@ public class ControlEnemyTransparency : MonoBehaviour
         {
             Debug.Log("Enter");
             sr.color = colorGradient.Evaluate(0);
+            time = changeTime;
         }
     }
 
