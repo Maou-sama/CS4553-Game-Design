@@ -19,13 +19,17 @@ public class Key : MonoBehaviour {
         GetComponent<SpriteRenderer>().color = door.GetComponent<SpriteRenderer>().color;
     }
 
+
     private void Update()	//#
     {
-	    //Find the player in the scene
+        //Find the player in the scene
         if (player == null)
         {
-			player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerNew>();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerNew>();
         }
+        //Assign the door ID to key ID and match the color
+        keyID = door.DoorID;
+        GetComponent<SpriteRenderer>().color = door.GetComponent<SpriteRenderer>().color;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

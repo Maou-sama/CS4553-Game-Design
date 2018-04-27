@@ -1,3 +1,4 @@
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class TriggerMovingWall : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             foreach (MovingWall mv in mvs)
-            {
+            {                         
                 mv.Move();
             }
         }

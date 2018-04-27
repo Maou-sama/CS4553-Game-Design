@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 10e1ff2900f09cf4580d80e40d5b15dd, type: 3}
+<<<<<<< Updated upstream:Prototype_2_group/Assets/Tiles/Wall.asset
   m_Color: {r: 0.017517302, g: 0.15219249, b: 0.2647059, a: 1}
+=======
+  m_Color: {r: 0.34823745, g: 0.38685495, b: 0.41911763, a: 1}
+>>>>>>> Stashed changes:Prototype_2_group/Assets/Tiles/Blue.asset
   m_Transform:
     e00: 1
     e01: 0
