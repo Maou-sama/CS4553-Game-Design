@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallDamage: 0
-  speed: 2
+  speed: 4
   fl: {fileID: 114658374225828644}
   mark: {fileID: 1429746512460442, guid: 6d89d74a6e93f70459b5eeb051eeb3d2, type: 2}
 --- !u!114 &114658374225828644
