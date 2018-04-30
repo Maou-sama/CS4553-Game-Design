@@ -15,10 +15,14 @@ public class CrushingWall : MonoBehaviour
     private Vector2 startingPosition;
     private bool move = false;
     private bool trigger = false;
+    private bool moveSaveState;
+    private bool triggerSaveState;
 
     private void Start()
     {
         startingPosition = transform.position;
+        moveSaveState = move;
+        triggerSaveState = trigger;
     }
 
     // Update is called once per frame
@@ -37,11 +41,18 @@ public class CrushingWall : MonoBehaviour
             }
         }
     }
+    
+    public void SaveWallState()
+    {
+        startingPosition = transform.position;
+        moveSaveState = move;
+        triggerSaveState = trigger;
+    }
 
     public void ResetWall()
     {
-        trigger = false;
-        move = false;
+        trigger = triggerSaveState;
+        move = moveSaveState;
         transform.position = startingPosition;
     }
 

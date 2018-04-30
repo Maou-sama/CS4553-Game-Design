@@ -7,8 +7,11 @@ public class SavePoint : MonoBehaviour {
     //a check to see if player already activate this point
     private bool check;
 
+    private CrushingWall crushingWall;
+
     private void Start()
     {
+        crushingWall = GameObject.FindGameObjectWithTag("CrushingWall").GetComponent<CrushingWall>();
         check = false;
     }
 
@@ -25,7 +28,10 @@ public class SavePoint : MonoBehaviour {
                 check = true;
             }
             player.SetBattery(10);
+            crushingWall.SaveWallState();
             GameManager.gm.SaveDoor();
+            GameManager.gm.SaveKey();
+            GameManager.gm.ShowSaveText();
         }
     }
 }

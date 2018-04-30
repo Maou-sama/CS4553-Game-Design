@@ -41,6 +41,7 @@ public class Key : MonoBehaviour {
         {
             player.AcquireKey(keyID);
             GameManager.gm.AddDoorToBeSaved(door);
+            GameManager.gm.AddKeyToBeSaved(gameObject);
             doorScript.openDoor();
             gameObject.SetActive(false);
         }

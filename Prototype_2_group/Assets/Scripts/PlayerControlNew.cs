@@ -11,7 +11,6 @@ public class PlayerControlNew : MonoBehaviour {
     private SpriteRenderer sr;
     private Collider2D c2d;
 
-    private GameObject[] allKeys;
     private GameObject movingWall;
 
     [Header("Player Properties")]
@@ -28,7 +27,6 @@ public class PlayerControlNew : MonoBehaviour {
     
     private void Start()
     {
-        allKeys = GameObject.FindGameObjectsWithTag("Key");
         movingWall = GameObject.FindGameObjectWithTag("CrushingWall");
         player = GetComponent<PlayerNew>();
         rigi = GetComponent<Rigidbody2D>();
@@ -99,12 +97,9 @@ public class PlayerControlNew : MonoBehaviour {
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(respawnTime);
-        foreach(GameObject key in allKeys)
-        {
-            key.SetActive(true);
-        }
         movingWall.GetComponent<CrushingWall>().ResetWall();
         GameManager.gm.ResetDoor();
+        GameManager.gm.ResetKey();
         sr.enabled = true;
         c2d.enabled = true;
         Camera.main.GetComponent<ShakeScreen>().cameraCenterPos = new Vector3(player.SavePointPos.x, player.SavePointPos.y, -10);

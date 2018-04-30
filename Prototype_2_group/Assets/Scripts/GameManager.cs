@@ -10,16 +10,20 @@ public class GameManager : MonoBehaviour
 
     private PlayerNew playerData;
     private GameObject player;
+    private GameObject[] allDoors;
+    private GameObject[] allKeys;
 
     private List<GameObject> doorToBeSaved;
     private List<GameObject> doorSaved;
+    private List<GameObject> keyToBeSaved;
+    private List<GameObject> keySaved;
 
     [Header("Initialization")]
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform startPosition;
-    [SerializeField] GameObject[] allDoors;
 
     [Header("Text Field")]
+    public Text saved;
     public Text hp;
     public Text battery;
 
@@ -48,6 +52,9 @@ public class GameManager : MonoBehaviour
         playerData = player.GetComponent<PlayerNew>();
         playerData.setSavePointPos(startPosition.position);
         allDoors = GameObject.FindGameObjectsWithTag("Door");
+        allKeys = GameObject.FindGameObjectsWithTag("Key");
+        keyToBeSaved = new List<GameObject>();
+        keySaved = new List<GameObject>();
         doorToBeSaved = new List<GameObject>();
         doorSaved = new List<GameObject>();
     }
@@ -57,6 +64,44 @@ public class GameManager : MonoBehaviour
     {
         hp.text = "HP: " + playerData.hp;
         battery.text = "x " + playerData.Battery;
+    }
+
+    public void ShowSaveText()
+    {
+        saved.gameObject.SetActive(true);
+        StartCoroutine(DisableSaveText());
+    }
+
+    private IEnumerator DisableSaveText()
+    {
+        yield return new WaitForSeconds(1);
+        saved.gameObject.SetActive(false);
+    }
+
+    public void AddKeyToBeSaved(GameObject key)
+    {
+        keyToBeSaved.Add(key);
+    }
+
+    public void SaveKey()
+    {
+        foreach (GameObject key in keyToBeSaved)
+        {
+            keySaved.Add(key);
+        }
+        keyToBeSaved = new List<GameObject>();
+    }
+
+    public void ResetKey()
+    {
+        foreach (GameObject key in allKeys)
+        {
+            if (!keySaved.Contains(key))
+            {
+                key.SetActive(true);
+            }
+        }
+        keyToBeSaved = new List<GameObject>();
     }
 
     public void AddDoorToBeSaved(GameObject door)
