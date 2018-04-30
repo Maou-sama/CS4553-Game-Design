@@ -46,26 +46,29 @@ public class PlayerControlNew : MonoBehaviour {
         rigi.velocity = Vector2.zero;
 
         //Movement Control
-        if (Input.GetKey(KeyCode.W))
-        {
-            direction = transform.up;
-            rigi.velocity = direction * speed;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            direction = -transform.up;
-            rigi.velocity = direction * speed;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            direction = transform.right;
-            rigi.velocity = direction * speed;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            direction = -transform.right;
-            rigi.velocity = direction * speed;
-        }
+		if (!fl.getFlashLight ()) {
+			if (Input.GetKey(KeyCode.W))
+			{
+				direction = transform.up;
+				rigi.velocity = direction * speed;
+			}
+			else if (Input.GetKey(KeyCode.S))
+			{
+				direction = -transform.up;
+				rigi.velocity = direction * speed;
+			}
+			else if (Input.GetKey(KeyCode.D))
+			{
+				direction = transform.right;
+				rigi.velocity = direction * speed;
+			}
+			else if (Input.GetKey(KeyCode.A))
+			{
+				direction = -transform.right;
+				rigi.velocity = direction * speed;
+			}
+		}
+        
 
         //Turn on off the flash light
         if (Input.GetKey(KeyCode.J))
