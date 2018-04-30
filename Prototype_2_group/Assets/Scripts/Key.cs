@@ -38,6 +38,7 @@ public class Key : MonoBehaviour {
         {
             player.AcquireKey(keyID);
             Destroy(gameObject);
+            door.openDoor();
         }
     }
 }

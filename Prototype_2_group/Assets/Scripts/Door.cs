@@ -40,7 +40,7 @@ public class Door : MonoBehaviour {
         }
     }
 
-    private void openDoor()
+    public void openDoor()
     {
         Destroy(gameObject);
     }
