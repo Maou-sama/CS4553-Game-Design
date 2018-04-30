@@ -27,18 +27,18 @@ public class Door : MonoBehaviour {
     }
 		
 
-	private void OnCollisionEnter2D(Collision2D collision)	//#
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            bool hasKey = collision.gameObject.GetComponent<PlayerNew>().CheckKey(doorID);
-            if(hasKey)
-            {
-                openDoor();
-            }
-           
-        }
-    }
+//	private void OnCollisionEnter2D(Collision2D collision)	//#
+//    {
+//        if (collision.gameObject.tag == "Player")
+//        {
+//            bool hasKey = collision.gameObject.GetComponent<PlayerNew>().CheckKey(doorID);
+//            if(hasKey)
+//            {
+//                openDoor();
+//            }
+//           
+//        }
+//    }
 
     public void openDoor()
     {
