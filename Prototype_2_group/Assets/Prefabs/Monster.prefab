@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 58193151804097356}
   - component: {fileID: 212658151282969772}
   - component: {fileID: 114571475467561758}
+  - component: {fileID: 114589490949428700}
   m_Layer: 9
   m_Name: Monster
   m_TagString: Untagged
@@ -369,6 +370,20 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+--- !u!114 &114589490949428700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792449914200012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d97b86e3ea2bb4496925d41d0ad960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  screenShakeDuration: 0.8
+  screenShakeMagnitude: 0.8
 --- !u!212 &212658151282969772
 SpriteRenderer:
   m_ObjectHideFlags: 1

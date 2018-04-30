@@ -15,12 +15,16 @@ public class SavePoint : MonoBehaviour {
     //Set player hp back to the max, record the position of the save point only if this save point isn't activated
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && check == false)
+        if (collision.gameObject.tag == "Player")
         { 
             PlayerNew player = collision.gameObject.GetComponent<PlayerNew>();
             player.setSavePointPos(transform.position);
-            player.hp = player.MaxHP;
-            check = true;
+            if (!check)
+            {
+                player.hp = player.MaxHP;
+                check = true;
+            }
+            player.SetBattery(10);
         }
     }
 }

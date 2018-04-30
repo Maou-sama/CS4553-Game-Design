@@ -55,6 +55,16 @@ public class ControlEnemyTransparency : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            sr.color = colorGradient.Evaluate(0);
+            startChanging = true;
+            time = 0;
+        }
+    }
+
     //When out of range start changing the color along the gradient
     private void OnTriggerExit2D(Collider2D collision)
     {

@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  damage: 1
+  damage: 4
   chaseRange: 6
   jumpOutScale: 5
   footStepClip: {fileID: 8300000, guid: 5643b5a987e97ac459c8ee743cdc09ee, type: 3}

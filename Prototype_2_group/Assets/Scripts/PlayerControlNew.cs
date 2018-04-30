@@ -8,14 +8,18 @@ public class PlayerControlNew : MonoBehaviour {
 
     private PlayerNew player;
     private Rigidbody2D rigi;
+    private SpriteRenderer sr;
+    private Collider2D c2d;
 
     [Header("Player Properties")]
     [SerializeField] private int wallDamage;
     [SerializeField] private float speed;
+    [SerializeField] private float respawnTime;
 
     [Header("Player's Object")]
     [SerializeField] private FlashLight fl;
     [SerializeField] private GameObject mark;
+    [SerializeField] private GameObject bloodParticleSystem;
 
     private Vector3 direction;
     
@@ -23,15 +27,15 @@ public class PlayerControlNew : MonoBehaviour {
     {
         player = GetComponent<PlayerNew>();
         rigi = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        c2d = GetComponent<Collider2D>();
     }
 
     private void Update()
     {
         if (player.hp <= 0)
         {
-            player.hp = player.MaxHP;
-            Camera.main.GetComponent<ShakeScreen>().cameraCenterPos = new Vector3(player.SavePointPos.x, player.SavePointPos.y, -10);
-            transform.position = new Vector3(player.SavePointPos.x, player.SavePointPos.y, -1);
+            Die();
         }
 
         rigi.velocity = Vector2.zero;
@@ -73,6 +77,24 @@ public class PlayerControlNew : MonoBehaviour {
         {
             Instantiate(mark, transform.position, Quaternion.identity);
         }
+    }
+
+    private void Die()
+    {
+        player.hp = player.MaxHP;
+        Instantiate(bloodParticleSystem, transform.position, Quaternion.Euler(180, 0, 0));
+        sr.enabled = false;
+        c2d.enabled = false;
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+        sr.enabled = true;
+        c2d.enabled = true;
+        Camera.main.GetComponent<ShakeScreen>().cameraCenterPos = new Vector3(player.SavePointPos.x, player.SavePointPos.y, -10);
+        transform.position = new Vector3(player.SavePointPos.x, player.SavePointPos.y, -1);
     }
 
     void TurnOnFlashLight()

@@ -84,9 +84,9 @@ public class PlayerNew : MonoBehaviour {
     {
         potion -= num;
     }
-    public void AcquireBattery(int num)
+    public void SetBattery(int num)
     {
-        battery += num;
+        battery = num;
     }
     public void AcquirePotion(int potion_num)
     {
