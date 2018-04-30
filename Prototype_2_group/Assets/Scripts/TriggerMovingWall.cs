@@ -6,6 +6,7 @@ using UnityEngine;
 public class TriggerMovingWall : MonoBehaviour {
 
     [SerializeField] private MovingWall[] mvs;
+    [SerializeField] private GameObject movingWallSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +16,7 @@ public class TriggerMovingWall : MonoBehaviour {
             {                         
                 mv.Move();
             }
+            movingWallSound.SetActive(true);
         }
     }
 }

@@ -8,14 +8,17 @@ public class Key : MonoBehaviour {
 	private PlayerNew player;
 
     [Header("Key Properties")]
-    [SerializeField] private Door door;
+    [SerializeField] private GameObject door;
     [SerializeField] private int keyID;
+
+    private Door doorScript;
 
 
     private void Start()
     {
+        doorScript = door.GetComponent<Door>();
         //Assign the door ID to key ID and match the color
-        keyID = door.DoorID;
+        keyID = doorScript.DoorID;
         GetComponent<SpriteRenderer>().color = door.GetComponent<SpriteRenderer>().color;
     }
 
@@ -28,7 +31,7 @@ public class Key : MonoBehaviour {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerNew>();
         }
         //Assign the door ID to key ID and match the color
-        keyID = door.DoorID;
+        keyID = doorScript.DoorID;
         GetComponent<SpriteRenderer>().color = door.GetComponent<SpriteRenderer>().color;
     }
 
@@ -37,8 +40,9 @@ public class Key : MonoBehaviour {
         if (player != null && collision.gameObject.tag == "Player")
         {
             player.AcquireKey(keyID);
-            Destroy(gameObject);
-            door.openDoor();
+            GameManager.gm.AddDoorToBeSaved(door);
+            doorScript.openDoor();
+            gameObject.SetActive(false);
         }
     }
 }

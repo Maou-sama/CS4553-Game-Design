@@ -42,6 +42,6 @@ public class Door : MonoBehaviour {
 
     public void openDoor()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

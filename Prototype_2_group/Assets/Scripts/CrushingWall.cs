@@ -5,11 +5,13 @@ public enum Direction { Left, Right }
 
 public class CrushingWall : MonoBehaviour
 {
+    [SerializeField] private GameObject movingWallSound;
+
     [Header("Crushing Wall Properties")]
     [SerializeField] private float speed;
     [SerializeField] private int damage;
     [SerializeField] private Direction direction;
-
+    
     private Vector2 startingPosition;
     private bool move = false;
     private bool trigger = false;
@@ -36,7 +38,7 @@ public class CrushingWall : MonoBehaviour
         }
     }
 
-    void ResetWall()
+    public void ResetWall()
     {
         trigger = false;
         move = false;
@@ -54,6 +56,7 @@ public class CrushingWall : MonoBehaviour
         if(collision.gameObject.tag == "StaticWall")
         {
             move = false;
+            movingWallSound.SetActive(false);
         }
     }
 

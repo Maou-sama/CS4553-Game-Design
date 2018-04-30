@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d97b86e3ea2bb4496925d41d0ad960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 2
   screenShakeDuration: 0.8
   screenShakeMagnitude: 0.8
 --- !u!212 &212658151282969772

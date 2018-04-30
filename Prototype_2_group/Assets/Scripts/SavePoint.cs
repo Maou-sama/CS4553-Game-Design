@@ -25,6 +25,7 @@ public class SavePoint : MonoBehaviour {
                 check = true;
             }
             player.SetBattery(10);
+            GameManager.gm.SaveDoor();
         }
     }
 }

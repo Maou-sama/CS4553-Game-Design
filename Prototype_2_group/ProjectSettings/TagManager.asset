@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - MovingWall
   - CrushingWall
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

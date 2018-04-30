@@ -5,7 +5,10 @@ using System.Collections;
 public class FlashLight : MonoBehaviour
 {
     private CircleCollider2D cc2d;
+
+    [Header("Light's Properties")]
     [SerializeField] private Light flashlight;
+    [SerializeField] private float intensity;
 
     // Use this for initialization
     void Start()
@@ -16,7 +19,7 @@ public class FlashLight : MonoBehaviour
     public void On()
     {
         cc2d.enabled = true;
-        flashlight.intensity = 5;
+        flashlight.intensity = intensity;
     }
 
     public void Off()

@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d97b86e3ea2bb4496925d41d0ad960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
   screenShakeDuration: 0.8
   screenShakeMagnitude: 0.8
 --- !u!210 &210334519362439916

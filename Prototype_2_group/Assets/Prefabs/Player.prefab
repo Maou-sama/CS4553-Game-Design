@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05769aab440df884b94c6be8c614290e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallDamage: 0
+  wallDamage: 1
   speed: 4
   respawnTime: 1
   fl: {fileID: 114658374225828644}
@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight: {fileID: 108957799845782134}
+  intensity: 50
 --- !u!114 &114931338546044918
 MonoBehaviour:
   m_ObjectHideFlags: 1
