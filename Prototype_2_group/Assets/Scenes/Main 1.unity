@@ -4129,6 +4129,11 @@ Prefab:
       propertyPath: Priority
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 82640483790150872, guid: 27512087bf7f1be41b8fb95e744f5cc4,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -100199,6 +100204,11 @@ Prefab:
       propertyPath: Priority
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 82640483790150872, guid: 27512087bf7f1be41b8fb95e744f5cc4,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -112456,6 +112466,11 @@ Prefab:
         type: 2}
       propertyPath: Priority
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 82640483790150872, guid: 27512087bf7f1be41b8fb95e744f5cc4,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
