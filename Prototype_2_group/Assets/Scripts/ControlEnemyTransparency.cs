@@ -57,7 +57,7 @@ public class ControlEnemyTransparency : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             sr.color = colorGradient.Evaluate(0);
             startChanging = true;

@@ -159,6 +159,7 @@ public class GhostNew : MonoBehaviour {
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(originalPosition, chaseRange);
+        //Gizmos.DrawWireSphere(originalPosition, chaseRange);
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
 }

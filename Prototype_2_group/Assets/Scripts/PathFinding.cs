@@ -9,8 +9,10 @@ public class PathFinding : MonoBehaviour
     [Header("Monster Properties")]
     [SerializeField] private float speed;
     [SerializeField] private float reachDist;
+    //[SerializeField] private int startPos;
 
     private int currentPoint = 0;
+    //private int currentPoint = 0;
     //public float rotateTime;
 
     //Update is called once per frame
@@ -25,7 +27,7 @@ public class PathFinding : MonoBehaviour
 
         //Lerp/move the monster to the current point its going to
         transform.position = Vector3.Lerp(transform.position, path[currentPoint].position, Time.deltaTime * speed);
-
+        //transform.position = Vector3.Lerp(transform.position, path[currentPoint].position, Time.deltaTime * speed);
         //If the monster is within the reach distance make it go to the next point
         if (dist <= reachDist)
         {
@@ -36,6 +38,7 @@ public class PathFinding : MonoBehaviour
         if(currentPoint >= path.Length)
         {
             currentPoint = 0;
+            //currentPoint = startPos;
         }
     }
 

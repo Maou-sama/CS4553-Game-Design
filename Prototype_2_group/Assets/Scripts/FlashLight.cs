@@ -2,11 +2,13 @@
 using System.Collections;
 
 [RequireComponent(typeof(CircleCollider2D))]
+//[RequireComponent(typeof(SpriteMask))]
 public class FlashLight : MonoBehaviour
 {
     private CircleCollider2D cc2d;
+    private SpriteMask sm;
 	private bool flashLightOn;
-
+    
     [Header("Light's Properties")]
     [SerializeField] private Light flashlight;
     [SerializeField] private float intensity;
@@ -16,11 +18,13 @@ public class FlashLight : MonoBehaviour
     {
 		flashLightOn = false;
         cc2d = GetComponent<CircleCollider2D>();
+        //sm = GetComponent<SpriteMask>();
     }
 
     public void On()
     {
         cc2d.enabled = true;
+        //sm.enabled = true;
 		flashLightOn = true;
         flashlight.intensity = intensity;
     }
@@ -28,7 +32,8 @@ public class FlashLight : MonoBehaviour
     public void Off()
     {
         cc2d.enabled = false;
-		flashLightOn = false;
+        //sm.enabled = false;
+        flashLightOn = false;
         flashlight.intensity = 0;
     }
 

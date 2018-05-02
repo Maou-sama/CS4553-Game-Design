@@ -17,6 +17,8 @@ public class PlayerControlNew : MonoBehaviour {
     [SerializeField] private int wallDamage;
     [SerializeField] private float speed;
     [SerializeField] private float respawnTime;
+    [SerializeField] private float speedUpScale;
+    [SerializeField] private float speedUpTime;
 
     [Header("Player's Object")]
     [SerializeField] private FlashLight fl;
@@ -34,6 +36,14 @@ public class PlayerControlNew : MonoBehaviour {
         c2d = GetComponent<Collider2D>();
     }
 
+    bool ismove = false;
+    bool isrun = false;
+    IEnumerator  countDownTime()
+    {
+        yield return new WaitForSeconds(speedUpTime);
+        isrun = false;
+    }
+
     private void Update()
     {
         if (player.hp <= 0)
@@ -42,30 +52,52 @@ public class PlayerControlNew : MonoBehaviour {
         }
 
         rigi.velocity = Vector2.zero;
-
+        direction = Vector2.zero;
+   
         //Movement Control
 		if (!fl.getFlashLight ()) {
-			if (Input.GetKey(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                isrun = true;
+                StartCoroutine(countDownTime());
+            }              
+                
+            if (Input.GetKey(KeyCode.W))
 			{
-				direction = transform.up;
-				rigi.velocity = direction * speed;
-			}
-			else if (Input.GetKey(KeyCode.S))
+				direction += transform.up;
+                ismove = true;
+                //rigi.velocity = direction * speed;
+                }
+			if (Input.GetKey(KeyCode.S))
 			{
-				direction = -transform.up;
-				rigi.velocity = direction * speed;
+				direction += -transform.up;
+                ismove = true;
+               //rigi.velocity = direction * speed;
 			}
-			else if (Input.GetKey(KeyCode.D))
+			if (Input.GetKey(KeyCode.D))
 			{
-				direction = transform.right;
-				rigi.velocity = direction * speed;
+				direction += transform.right;
+                ismove = true;
+                //rigi.velocity = direction * speed;
 			}
-			else if (Input.GetKey(KeyCode.A))
+			if (Input.GetKey(KeyCode.A))
 			{
-				direction = -transform.right;
-				rigi.velocity = direction * speed;
+				direction += -transform.right;
+                ismove = true;
+                //rigi.velocity = direction * speed;
 			}
-		}
+            if (ismove)
+            {
+                if (isrun)
+                    rigi.velocity = direction * speed*speedUpScale;
+                else
+                    rigi.velocity = direction * speed;
+            }
+            else
+            {
+                rigi.velocity = Vector2.zero; ;
+            }
+        }
         
 
         //Turn on off the flash light
