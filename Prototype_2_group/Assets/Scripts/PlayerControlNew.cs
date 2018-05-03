@@ -60,43 +60,14 @@ public class PlayerControlNew : MonoBehaviour {
             {
                 isrun = true;
                 StartCoroutine(countDownTime());
-            }              
-                
-            if (Input.GetKey(KeyCode.W))
-			{
-				direction += transform.up;
-                ismove = true;
-                //rigi.velocity = direction * speed;
-                }
-			if (Input.GetKey(KeyCode.S))
-			{
-				direction += -transform.up;
-                ismove = true;
-               //rigi.velocity = direction * speed;
-			}
-			if (Input.GetKey(KeyCode.D))
-			{
-				direction += transform.right;
-                ismove = true;
-                //rigi.velocity = direction * speed;
-			}
-			if (Input.GetKey(KeyCode.A))
-			{
-				direction += -transform.right;
-                ismove = true;
-                //rigi.velocity = direction * speed;
-			}
-            if (ismove)
-            {
-                if (isrun)
-                    rigi.velocity = direction * speed*speedUpScale;
-                else
-                    rigi.velocity = direction * speed;
             }
+
+            direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+            if (isrun)
+                rigi.velocity = direction * speed * speedUpScale;
             else
-            {
-                rigi.velocity = Vector2.zero; ;
-            }
+                rigi.velocity = direction * speed;
         }
         
 

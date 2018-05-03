@@ -30040,7 +30040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b415d4d1322aa6c44bb119f520605b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1412869958932922, guid: 4cd7d45813ec22a4583e25fadf6736f2,
+  playerPrefab: {fileID: 1412869958932922, guid: 88d07b8e65f6fb044b15c5614e05f349,
     type: 2}
   startPosition: {fileID: 683139330}
   saved: {fileID: 1289040289}
