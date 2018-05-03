@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Text Field")]
     public Text saved;
-    public Text hp;
+    public Slider hp;
     public Text battery;
 
     void Awake()
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hp.text = "HP: " + playerData.hp;
+        hp.value = playerData.hp;
         battery.text = "x " + playerData.Battery;
     }
 

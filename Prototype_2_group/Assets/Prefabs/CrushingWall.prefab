@@ -207,8 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afd26b0b4398ef438db7fc0b3677d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movingWallSound: {fileID: 0}
   speed: 0.02
-  damage: 10
+  damage: 20
   direction: 0
 --- !u!114 &114636379617699004
 MonoBehaviour:
@@ -228,6 +229,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  movingWallSound: {fileID: 0}
 --- !u!212 &212082415690228828
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -84,7 +84,11 @@ public class PlayerControlNew : MonoBehaviour {
         //Leave blood mark
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Instantiate(mark, transform.position, Quaternion.identity);
+            if (player.hp > 1)
+            {
+                Instantiate(mark, transform.position, Quaternion.identity);
+                player.loseHP(1);
+            }
         }
     }
 

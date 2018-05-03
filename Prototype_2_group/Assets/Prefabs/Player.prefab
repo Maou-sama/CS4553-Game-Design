@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72e7659c7ca9354cbbef03729769fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
+  maxHP: 20
   battery: 10
   savePointPos: {x: 0, y: 0, z: 0}
   potion: 2
