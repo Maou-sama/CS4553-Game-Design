@@ -20,7 +20,7 @@ public class changeTransparency : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		sr.color = new Color(255, 255, 2555, (float)(time / changeTime));
+		sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (float)(time / changeTime));
 		//sr.color = colorGradient.Evaluate (time / changeTime); //as time increases, we move along the gradient
 		if (rise) {
 			time += Time.deltaTime;
