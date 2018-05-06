@@ -17,16 +17,16 @@ public class PlayerControlNew : MonoBehaviour {
     [SerializeField] private int wallDamage;
     [SerializeField] private float speed;
     [SerializeField] private float respawnTime;
-    [SerializeField] private float speedUpScale;
-    [SerializeField] private float speedUpTime;
+
+    [SerializeField] private SprintBar sprint;
+    public float sprintBarLength=1;
 
     [Header("Player's Object")]
     [SerializeField] private FlashLight fl;
     [SerializeField] private GameObject mark;
     [SerializeField] private GameObject bloodParticleSystem;
-
     private Vector3 direction;
-    
+
     private void Start()
     {
         movingWall = GameObject.FindGameObjectWithTag("CrushingWall");
@@ -34,63 +34,71 @@ public class PlayerControlNew : MonoBehaviour {
         rigi = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         c2d = GetComponent<Collider2D>();
+        
     }
 
-    bool ismove = false;
-    bool isrun = false;
-    IEnumerator  countDownTime()
-    {
-        yield return new WaitForSeconds(speedUpTime);
-        isrun = false;
-    }
+    bool isrun;
 
     private void Update()
     {
+
         if (player.hp <= 0)
         {
             Die();
         }
-
         rigi.velocity = Vector2.zero;
         direction = Vector2.zero;
-   
+        
+
         //Movement Control
-		if (!fl.getFlashLight ()) {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (!fl.getFlashLight())
+        {
+            if (Input.GetKey(KeyCode.W))
             {
-                isrun = true;
-                StartCoroutine(countDownTime());
+                direction += new Vector3(0, 1, 0);
             }
+            if (Input.GetKey(KeyCode.S))
+            {
+                direction += new Vector3(0, -1, 0);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                direction += new Vector3(1, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                direction += new Vector3(-1, 0, 0);
+            }
+            if (direction != Vector3.zero)
+                direction = direction.normalized;
 
-            direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-            if (isrun)
-                rigi.velocity = direction * speed * speedUpScale;
-            else
-                rigi.velocity = direction * speed;
+            rigi.velocity = direction * speed* sprint.PlayerSpeedScale();
         }
         
 
+
+
         //Turn on off the flash light
         if (Input.GetKey(KeyCode.J))
-        {
-            TurnOnFlashLight();
-        }
-        else if(Input.GetKeyUp(KeyCode.J))
-        {
-            TurnOffFlashLight();
-        }
-
-        //Leave blood mark
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (player.hp > 1)
             {
-                Instantiate(mark, transform.position, Quaternion.identity);
-                player.loseHP(1);
+                TurnOnFlashLight();
+            }
+            else if (Input.GetKeyUp(KeyCode.J))
+            {
+                TurnOffFlashLight();
+            }
+
+            //Leave blood mark
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                if (player.hp > 1)
+                {
+                    Instantiate(mark, transform.position, Quaternion.identity);
+                    player.loseHP(1);
+                }
             }
         }
-    }
+    
 
     private void Die()
     {
@@ -135,4 +143,6 @@ public class PlayerControlNew : MonoBehaviour {
             Camera.main.GetComponent<ShakeScreen>().Screenshake(0.8f, 1.6f);
         }
     }
+    
+
 }

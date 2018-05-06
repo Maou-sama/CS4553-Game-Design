@@ -6,6 +6,7 @@ public class SavePoint : MonoBehaviour {
 
     //a check to see if player already activate this point
     private bool check;
+    [SerializeField] private int recoverBatteryNum;
 
     private CrushingWall crushingWall;
 
@@ -27,7 +28,7 @@ public class SavePoint : MonoBehaviour {
                 player.hp = player.MaxHP;
                 check = true;
             }
-            player.SetBattery(10);
+            player.SetBattery(recoverBatteryNum);
             crushingWall.SaveWallState();
             GameManager.gm.SaveDoor();
             GameManager.gm.SaveKey();
