@@ -6,7 +6,7 @@ public class InputController : MonoBehaviour
 {
     public static InputController ic = null;
 
-    public bool useJoyStick;
+    public bool useJoyStick = false;
 
     [SerializeField] private GameObject keyBoardInputs;
     [SerializeField] private GameObject joyStickInputs;

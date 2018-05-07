@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 		*/
         if (gm == null)
         {
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
             gm = this;
         }
         else
@@ -70,18 +70,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerData.MaxHP <= 0)
-        {
-            SceneManager.LoadScene(2);
-        }
+            if (playerData.MaxHP <= 0)
+            {
+                SceneManager.LoadScene(2);
+            }
 
-        hp.maxValue = playerData.MaxHP;
-        hp.value = playerData.hp;
-        battery.value = playerData.Battery;
-        sprint.value = playerData.stamina;
+            hp.maxValue = playerData.MaxHP;
+            hp.value = playerData.hp;
+            battery.value = playerData.Battery;
+            sprint.value = playerData.stamina;
 
-        sprintBarPos = Camera.main.WorldToScreenPoint(player.transform.position + new Vector3(0, 1, 0));
-        sprint.transform.position = sprintBarPos;
+            sprintBarPos = Camera.main.WorldToScreenPoint(player.transform.position + new Vector3(0, 1, 0));
+            sprint.transform.position = sprintBarPos;
     }
 
     public void ShowSaveText()
