@@ -42,7 +42,7 @@ public class InputController : MonoBehaviour
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.buildIndex == 1)
+        if(scene.name == "Main")
         {
             if (useJoyStick)
             {

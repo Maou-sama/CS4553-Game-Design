@@ -141,7 +141,10 @@ public class PlayerControlNew : MonoBehaviour {
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(respawnTime);
-        movingWall.GetComponent<CrushingWall>().ResetWall();
+        if (movingWall != null)
+        {
+            movingWall.GetComponent<CrushingWall>().ResetWall();
+        }
         GameManager.gm.ResetDoor();
         GameManager.gm.ResetKey();
         sr.enabled = true;

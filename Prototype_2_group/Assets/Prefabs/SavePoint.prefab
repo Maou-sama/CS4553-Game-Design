@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ec80c761393d44c8c23be339689962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoverBatteryNum: 10
+  recoverBatteryNum: 5
 --- !u!212 &212446952995317594
 SpriteRenderer:
   m_ObjectHideFlags: 1

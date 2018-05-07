@@ -303,8 +303,8 @@ MonoBehaviour:
   respawnTime: 1
   reduceHpPerDeath: 1
   speedUpScale: 2
-  speedUpTime: 2
-  recoverTime: 3
+  speedUpTime: 1
+  recoverTime: 5
   coolingTime: 1
   fl: {fileID: 114658374225828644}
   mark: {fileID: 1429746512460442, guid: 6d89d74a6e93f70459b5eeb051eeb3d2, type: 2}
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
-  battery: 10
+  battery: 5
   maxStamina: 1
   savePointPos: {x: 0, y: 0, z: 0}
   potion: 2

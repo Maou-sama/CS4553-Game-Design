@@ -29,7 +29,10 @@ public class SavePoint : MonoBehaviour {
                 check = true;
             }
             player.SetBattery(recoverBatteryNum);
-            crushingWall.SaveWallState();
+            if (crushingWall != null)
+            {
+                crushingWall.SaveWallState();
+            }
             GameManager.gm.SaveDoor();
             GameManager.gm.SaveKey();
             GameManager.gm.ShowSaveText();
