@@ -12,6 +12,8 @@ TagManager:
   - CrushingWall
   - Key
   - Door
+  - TurnInvisiblePoint
+  - SprintBar
   layers:
   - Default
   - TransparentFX

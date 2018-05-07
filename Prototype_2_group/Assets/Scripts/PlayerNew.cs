@@ -8,12 +8,22 @@ public class PlayerNew : MonoBehaviour {
     [Header("Player's Properties")]
     [SerializeField] private int maxHP;
     [SerializeField] private int battery;
+    [SerializeField] private float maxStamina;
     [SerializeField] private Vector3 savePointPos;
     [SerializeField] private int potion;
 
     public int hp { get; set; }
+    public float stamina { get; set; }
 
 	private Dictionary<int, bool> keys = new Dictionary<int, bool>(); //#
+
+    public float MaxStamina
+    {
+        get
+        {
+            return maxStamina;
+        }
+    }
 
     public int MaxHP
     {
@@ -76,6 +86,11 @@ public class PlayerNew : MonoBehaviour {
     {
         hp -= damage;
     }
+    public void reduceMaxHP(int num)
+    {
+        maxHP -= num;
+    }
+
     public void loseBatery(int num)
     {
         battery -= num;

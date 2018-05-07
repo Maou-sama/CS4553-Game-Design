@@ -38,7 +38,8 @@ public class ControlEnemyTransparency : MonoBehaviour
             }
             else
             {
-                sr.color = colorGradient.Evaluate(1); //get the color from the far right of the gradient
+                sr.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+                sr.color = colorGradient.Evaluate(0); //get the color from the far right of the gradient
                 startChanging = false;
             }
         }
@@ -47,18 +48,19 @@ public class ControlEnemyTransparency : MonoBehaviour
     //When enter the range of flashlight apply the color on the left most of gradient
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "FlashLight")
+        /*if (collision.gameObject.tag == "FlashLight")
         {
             Debug.Log("Enter");
             sr.color = colorGradient.Evaluate(0);
             time = changeTime;
-        }
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            sr.maskInteraction = SpriteMaskInteraction.None;
             sr.color = colorGradient.Evaluate(0);
             startChanging = true;
             time = 0;
@@ -68,11 +70,11 @@ public class ControlEnemyTransparency : MonoBehaviour
     //When out of range start changing the color along the gradient
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "FlashLight")
+        /*if(collision.gameObject.tag == "FlashLight")
         {
             Debug.Log("Exit");
             startChanging = true;
             time = 0;
-        }
+        }*/
     }
 }

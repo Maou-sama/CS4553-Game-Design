@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private List<GameObject> keyToBeSaved;
     private List<GameObject> keySaved;
 
+    private Vector3 sprintBarPos;
+
     [Header("Initialization")]
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform startPosition;
@@ -25,7 +27,8 @@ public class GameManager : MonoBehaviour
     [Header("Text Field")]
     public Text saved;
     public Slider hp;
-    public Text battery;
+    public Slider battery;
+    public Slider sprint;
 
     void Awake()
     {
@@ -53,17 +56,26 @@ public class GameManager : MonoBehaviour
         playerData.setSavePointPos(startPosition.position);
         allDoors = GameObject.FindGameObjectsWithTag("Door");
         allKeys = GameObject.FindGameObjectsWithTag("Key");
+
         keyToBeSaved = new List<GameObject>();
         keySaved = new List<GameObject>();
         doorToBeSaved = new List<GameObject>();
         doorSaved = new List<GameObject>();
+
+        sprint.maxValue = playerData.MaxStamina;
+        hp.maxValue = playerData.MaxHP;
+        battery.maxValue = playerData.Battery;
     }
 
     // Update is called once per frame
     void Update()
     {
         hp.value = playerData.hp;
-        battery.text = "x " + playerData.Battery;
+        battery.value = playerData.Battery;
+        sprint.value = playerData.stamina;
+
+        sprintBarPos = Camera.main.WorldToScreenPoint(player.transform.position + new Vector3(0, 1, 0));
+        sprint.transform.position = sprintBarPos;
     }
 
     public void ShowSaveText()

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PathFinding : MonoBehaviour
 {
+    private Animator anim;
+
     [Header("The Path Taken By Monster")]
     public Transform[] path;
 
@@ -15,6 +17,11 @@ public class PathFinding : MonoBehaviour
     //private int currentPoint = 0;
     //public float rotateTime;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     //Update is called once per frame
     void Update()
     {
@@ -25,9 +32,19 @@ public class PathFinding : MonoBehaviour
         //Calculate the distance between the monster and the current point its going to
         float dist = Vector3.Distance(path[currentPoint].position, transform.position);
 
+        //Change animation according to the next position
+        if (path[currentPoint].position.x > transform.position.x)
+        {
+            anim.SetBool("FaceRight", true);
+        }
+        else
+        {
+            anim.SetBool("FaceRight", false);
+        }
+
         //Lerp/move the monster to the current point its going to
         transform.position = Vector3.Lerp(transform.position, path[currentPoint].position, Time.deltaTime * speed);
-        //transform.position = Vector3.Lerp(transform.position, path[currentPoint].position, Time.deltaTime * speed);
+
         //If the monster is within the reach distance make it go to the next point
         if (dist <= reachDist)
         {

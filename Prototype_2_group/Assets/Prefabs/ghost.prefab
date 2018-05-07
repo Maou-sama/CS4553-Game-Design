@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 50267314131725706}
   - component: {fileID: 114074686389384052}
   - component: {fileID: 114326209986175704}
+  - component: {fileID: 95341808665106698}
   m_Layer: 11
   m_Name: ghost
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948591652792016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.08, y: -3.29, z: -1}
+  m_LocalPosition: {x: 45.84, y: 10.94, z: -2}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4023814910168138}
@@ -111,14 +112,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 2.91}
+    oldSize: {x: 3.25, y: 5.75}
     newSize: {x: 1.33, y: 1.19}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.33, y: 1.19}
+  m_Size: {x: 3.25, y: 5.75}
   m_EdgeRadius: 0
 --- !u!82 &82219654017002110
 AudioSource:
@@ -137,7 +138,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 3
@@ -211,8 +212,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8b2efc1e67e15ce409a0043f9babb9f7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
+  m_Volume: 1
+  m_Pitch: 0.4
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -222,7 +223,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 6
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -230,28 +231,28 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0
-      value: 0.9833256
-      inSlope: -0.2825394
-      outSlope: -0.2825394
+      time: 0.06554286
+      value: 0.9916649
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.05722323
-      value: 0.97424924
-      inSlope: 0.050975077
-      outSlope: 0.050975077
+      time: 0.14641556
+      value: 0.9464127
+      inSlope: -0.44981694
+      outSlope: -0.44981694
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.39887238
-      value: 0.9850955
-      inSlope: 0.20067957
-      outSlope: 0.20067957
+      time: 0.28795642
+      value: 0.24433112
+      inSlope: -1.0133678
+      outSlope: -1.0133678
       tangentMode: 0
     - serializedVersion: 2
       time: 1
       value: 0
-      inSlope: -1.3333334
-      outSlope: -1.3333334
+      inSlope: -0.1996795
+      outSlope: -0.1996795
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -292,6 +293,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95341808665106698
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948591652792016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1ea164555225e54aa41d45d2d07301c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114074686389384052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,11 +362,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0803124c058254c4e8c2849ac07184cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  damage: 20
-  chaseRange: 6
+  speed: 0.25
+  damage: 5
+  chaseRange: 5
   jumpOutScale: 5
-  footStepClip: {fileID: 8300000, guid: 5643b5a987e97ac459c8ee743cdc09ee, type: 3}
+  footStepClip: {fileID: 8300000, guid: 30ad774271550cf4a8538344e1c2e7cb, type: 3}
   footStep: {fileID: 1488249720086760, guid: a6bd82bc3c028ed4a9735bd78ba9f029, type: 2}
   footStepGenerateInterval: 2
   screamAudioControl: {fileID: 82219654017002110}
@@ -386,8 +404,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9df00093e41f3478b8bcf2b0aef8ba72, type: 3}
-  m_Color: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5cba4cf8905faf047b078d4d1f118d54, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -395,4 +413,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1

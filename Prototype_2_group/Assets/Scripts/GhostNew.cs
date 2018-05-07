@@ -30,6 +30,7 @@ public class GhostNew : MonoBehaviour {
     private AudioSource audioControl;
     private Rigidbody2D rigi;
     private SpriteRenderer spr;
+    private Animator anim;
     private bool leaveFootStep = false;
     //private Sequence seq;
 
@@ -42,6 +43,7 @@ public class GhostNew : MonoBehaviour {
         audioControl = GetComponent<AudioSource>();
         rigi = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         originalPosition = transform.position;
         oldScale = transform.localScale;
@@ -91,6 +93,9 @@ public class GhostNew : MonoBehaviour {
         float distance = Vector2.Distance(player.transform.position, transform.position);
         Vector2 direction = (player.transform.position - transform.position).normalized;
 
+        anim.SetFloat("x", direction.x);
+        anim.SetFloat("y", direction.y);
+
         //Leave footstep and move to player if distance is > 0.2
         GhostMovement(distance, direction);
     }
@@ -100,6 +105,9 @@ public class GhostNew : MonoBehaviour {
         //Get the distance and direction to the original position
         float distance = Vector2.Distance(originalPosition, transform.position);
         Vector2 direction = (originalPosition - (Vector2)transform.position).normalized;
+
+        anim.SetFloat("x", direction.x);
+        anim.SetFloat("y", direction.y);
 
         //Move back until the original position and leave foot step
         GhostMovement(distance, direction);

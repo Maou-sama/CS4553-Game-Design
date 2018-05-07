@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4114011889443478}
   - component: {fileID: 82065160873747986}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: GetDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4598112263088770}
   - component: {fileID: 82640483790150872}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,8 @@ GameObject:
   - component: {fileID: 212658151282969772}
   - component: {fileID: 114571475467561758}
   - component: {fileID: 114589490949428700}
-  m_Layer: 9
+  - component: {fileID: 95662141417452352}
+  m_Layer: 8
   m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 1368794204526922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.0009765625, y: 0.0009765625, z: 1}
   m_Children: []
   m_Father: {fileID: 4444054263853290}
   m_RootOrder: 0
@@ -83,8 +84,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792449914200012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.022, y: -0.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.08, y: 13.5, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 4114011889443478}
   - {fileID: 4598112263088770}
@@ -99,7 +100,7 @@ Transform:
   m_GameObject: {fileID: 1538339780277960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.0009765625, y: 0.0009765625, z: 1}
   m_Children: []
   m_Father: {fileID: 4444054263853290}
   m_RootOrder: 1
@@ -136,35 +137,29 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
-  MinDistance: 2
+  MinDistance: 1
   MaxDistance: 2.02
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 1
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0.13212079
-      value: 0.9915981
-      inSlope: 0.13890271
-      outSlope: 0.13890271
+      time: 0.661706
+      value: 1.0063171
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.38959122
-      value: 1.0148036
-      inSlope: 0.19788063
-      outSlope: 0.19788063
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.760376
-      value: 0.9784419
-      inSlope: -0.07964433
-      outSlope: -0.07964433
+      time: 0.75642395
+      value: 0.40460205
+      inSlope: -3.4030106
+      outSlope: -3.4030106
       tangentMode: 0
     - serializedVersion: 2
       time: 1
@@ -228,10 +223,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 4.98
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -315,6 +310,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95662141417452352
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792449914200012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ff9d7470ec397c4880da88c2c8331d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114269962138247590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,9 +338,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8b2c41f3c8b38428952e29bf27b484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: []
-  speed: 0
-  reachDist: 0
+  path:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 1.5
+  reachDist: 0.5
 --- !u!114 &114571475467561758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -343,8 +358,8 @@ MonoBehaviour:
   changeTime: 0.7
   colorGradient:
     serializedVersion: 2
-    key0: {r: 0.9725491, g: 0.07450981, b: 0.07450981, a: 1}
-    key1: {r: 0.9725491, g: 0.07450981, b: 0.07450981, a: 0}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 0}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -418,7 +433,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4fd4c0cf3fd8a544ab98550c70faf1b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a50df737323568418f6b1954fbe16be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -427,4 +442,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
