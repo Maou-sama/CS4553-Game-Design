@@ -74,17 +74,17 @@ public class PlayerControlNew : MonoBehaviour {
         }
 
         //Turn on off the flash light
-        if (Input.GetKey(KeyCode.J))
-            {
-                TurnOnFlashLight();
-            }
-        else if (Input.GetKeyUp(KeyCode.J))
+        if (Input.GetButton("Light"))
+        {
+            TurnOnFlashLight();
+        }
+        else if (Input.GetButtonUp("Light"))
         {
             TurnOffFlashLight();
         }
 
         //Leave blood mark
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetButtonDown("Mark"))
         {
             if (player.hp > 1)
             {
@@ -95,7 +95,7 @@ public class PlayerControlNew : MonoBehaviour {
 
         if (!isCooling)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetButton("Sprint"))
             {
                 if (player.stamina > 0)
                 {
@@ -194,6 +194,4 @@ public class PlayerControlNew : MonoBehaviour {
             Camera.main.GetComponent<ShakeScreen>().Screenshake(0.8f, 1.6f);
         }
     }
-    
-
 }

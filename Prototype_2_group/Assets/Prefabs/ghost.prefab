@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948591652792016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.84, y: 10.94, z: -2}
+  m_LocalPosition: {x: 25.52, y: 1.4, z: -1}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4023814910168138}
@@ -108,7 +108,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.016804218, y: 0.03360939}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -119,7 +119,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.25, y: 5.75}
+  m_Size: {x: 2.5217772, y: 5.4138966}
   m_EdgeRadius: 0
 --- !u!82 &82219654017002110
 AudioSource:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948591652792016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7055c526e9c88134b8b633d9fd7dc665, type: 3}
   m_Name: 
@@ -362,13 +362,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0803124c058254c4e8c2849ac07184cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.25
+  speed: 1.5
   damage: 5
-  chaseRange: 5
+  chaseRange: 8
   jumpOutScale: 5
   footStepClip: {fileID: 8300000, guid: 30ad774271550cf4a8538344e1c2e7cb, type: 3}
   footStep: {fileID: 1488249720086760, guid: a6bd82bc3c028ed4a9735bd78ba9f029, type: 2}
-  footStepGenerateInterval: 2
+  footStepGenerateInterval: 0.7
   screamAudioControl: {fileID: 82219654017002110}
 --- !u!212 &212905570893314354
 SpriteRenderer:

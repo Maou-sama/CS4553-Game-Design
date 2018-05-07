@@ -11,7 +11,7 @@ public class FlashLight : MonoBehaviour
     [Header("Light's Properties")]
     [SerializeField] private Light flashlight;
     [SerializeField] private float intensity;
-    [SerializeField] private SpriteMask sm;
+    [SerializeField] private SpriteMask lightSpriteMask;
 
     // Use this for initialization
     void Start()
@@ -23,7 +23,7 @@ public class FlashLight : MonoBehaviour
     public void On()
     {
         cc2d.enabled = true;
-        sm.enabled = true;
+        lightSpriteMask.enabled = true;
 		flashLightOn = true;
         flashlight.intensity = intensity;
     }
@@ -31,7 +31,7 @@ public class FlashLight : MonoBehaviour
     public void Off()
     {
         cc2d.enabled = false;
-        sm.enabled = false;
+        lightSpriteMask.enabled = false;
         flashLightOn = false;
         flashlight.intensity = 0;
     }

@@ -63,13 +63,19 @@ public class GameManager : MonoBehaviour
         doorSaved = new List<GameObject>();
 
         sprint.maxValue = playerData.MaxStamina;
-        hp.maxValue = playerData.MaxHP;
+        
         battery.maxValue = playerData.Battery;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(playerData.MaxHP <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
+
+        hp.maxValue = playerData.MaxHP;
         hp.value = playerData.hp;
         battery.value = playerData.Battery;
         sprint.value = playerData.stamina;

@@ -5,22 +5,23 @@ using UnityEngine;
 public class changeTransparency : MonoBehaviour {
 	private SpriteRenderer sr;
 	private float time; //timer variable for tweening colors
-	public float startTime;
+    private bool rise;
+
+    public float startTime;
 	public Gradient colorGradient;
-	private bool rise;
 	public float changeTime = 100f;
 	// Use this for initialization
 	void Start () {
 		sr = GetComponent<SpriteRenderer>();
 		time = startTime;
 		rise = false;
-		sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (float)0.5);
+		sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
 	}
 
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (float)(time / changeTime));
+		sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (time / changeTime));
 		//sr.color = colorGradient.Evaluate (time / changeTime); //as time increases, we move along the gradient
 		if (rise) {
 			time += Time.deltaTime;

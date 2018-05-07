@@ -8,6 +8,8 @@ Can experiment if desired
 
 public class ControlEnemyTransparency : MonoBehaviour
 {
+    private SpriteMask hitSpriteMask;
+
     private SpriteRenderer sr;
 
     private float time; //timer variable for tweening colors
@@ -24,7 +26,7 @@ public class ControlEnemyTransparency : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         time = changeTime;
-        startChanging = true;
+        startChanging = false;
     }
 
     private void Update()
@@ -38,7 +40,8 @@ public class ControlEnemyTransparency : MonoBehaviour
             }
             else
             {
-                sr.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+                hitSpriteMask.enabled = false;
+                //sr.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
                 sr.color = colorGradient.Evaluate(0); //get the color from the far right of the gradient
                 startChanging = false;
             }
@@ -60,7 +63,9 @@ public class ControlEnemyTransparency : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            sr.maskInteraction = SpriteMaskInteraction.None;
+            hitSpriteMask = collision.gameObject.transform.GetChild(3).GetComponent<SpriteMask>();
+            hitSpriteMask.enabled = true;
+            //sr.maskInteraction = SpriteMaskInteraction.None;
             sr.color = colorGradient.Evaluate(0);
             startChanging = true;
             time = 0;

@@ -92,12 +92,12 @@ TextureImporter:
       name: Girl_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 35
+        x: 2
+        y: 39
         width: 21
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -106,12 +106,12 @@ TextureImporter:
       name: Girl_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 35
-        width: 21
+        x: 25
+        y: 39
+        width: 20
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -120,12 +120,12 @@ TextureImporter:
       name: Girl_2
       rect:
         serializedVersion: 2
-        x: 42
-        y: 35
-        width: 21
+        x: 48
+        y: 39
+        width: 20
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Girl_3
       rect:
         serializedVersion: 2
-        x: 63
-        y: 35
-        width: 21
+        x: 71
+        y: 39
+        width: 20
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,12 +148,12 @@ TextureImporter:
       name: Girl_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 2
+        y: 2
         width: 21
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Girl_5
       rect:
         serializedVersion: 2
-        x: 21
-        y: 0
-        width: 21
+        x: 25
+        y: 2
+        width: 20
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Girl_6
       rect:
         serializedVersion: 2
-        x: 42
-        y: 0
+        x: 48
+        y: 2
         width: 21
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: Girl_7
       rect:
         serializedVersion: 2
-        x: 63
-        y: 0
+        x: 71
+        y: 2
         width: 21
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
