@@ -16,6 +16,6 @@ Unity3D
 
 * **Shaofang Ye** - *Sound Engineer* - [SommanyBugs](https://github.com/SommanyBugs)
 
-* **Zongheng Wang** - *UI Programmer* - [wangzonghen9](https://github.com/#3wangzonghen9)
+* **Zongheng Wang** - *UI Programmer* - [wangzonghen9](https://github.com/wangzonghen9)
 
 * **Yian Tong** - *Project Manager*
